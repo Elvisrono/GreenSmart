@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="container-fluid hero-section text-center position-relative">
+  <img src="{% static 'images/image9.jpeg' %}" alt="Farm Seedlings" class="img-fluid w-100 object-fit-cover">
+  <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75"></div>
+  <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
+    <h1 class="display-4 font-weight-bold">Welcome to Our Seedling Nursery</h1>
+    <p class="lead font-italic">Providing top-notch seedlings for your farming success.</p>
+    <a href="#services" class="btn btn-light btn-lg shadow">Explore Our Services</a>
+  </div>
+</div>
+
+{% endblock %}
