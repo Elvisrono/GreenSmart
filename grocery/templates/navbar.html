@@ -1,83 +1,57 @@
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary justify-content-center">
-
-    <a class="navbar-brand main-heading" href="{% url '' %}">
-
-      &nbsp; Philiphs
-
+<nav class="navbar navbar-expand-lg navbar-dark justify-content-center" style="background-color: #343a40;">
+    <a class="navbar-brand main-heading" href="{% url '' %}" style="margin-right: 2rem; font-size: 1.5rem; font-weight: bold; transition: color 0.3s ease;">
+        Philiphs
     </a>
 
-
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarNavDropdown"
-      aria-controls="navbarNavDropdown"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
     </button>
 
+    <div class="collapse navbar-collapse text-center" id="navbarNavDropdown">
+        <ul class="navbar-nav" style="gap: 1.5rem;">
+            {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'dashboard' %}"
+                        style="color: #f8f9fa; font-size: 1.2rem; transition: transform 0.3s ease, color 0.3s ease;">
+                        Dashboard &nbsp; <i class="fa fa-home" aria-hidden="true"></i>
+                    </a>
+                </li>
 
-      <div class="collapse navbar-collapse text-center" id="navbarNavDropdown">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'dashboard' %}"
+                        style="color: #f8f9fa; font-size: 1.2rem; transition: transform 0.3s ease, color 0.3s ease;">
+                        Seedlings &nbsp; <i class="fa fa-leaf" aria-hidden="true"></i>
+                    </a>
+                </li>
 
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'dashboard' %}"
+                        style="color: #f8f9fa; font-size: 1.2rem; transition: transform 0.3s ease, color 0.3s ease;">
+                        About Us &nbsp; <i class="fa fa-info-circle" aria-hidden="true"></i>
+                    </a>
+                </li>
 
-        <ul class="navbar-nav mr-auto">
-
-
-          &nbsp;     &nbsp;     &nbsp;
-
-          {% if user.is_authenticated %}
-
-            <li class="nav-item">
-
-              <a class="nav-link" href="{% url 'dashboard' %}">Dashboard &nbsp; <i class="fa fa-home" aria-hidden="true"></i> </a>
-
-            </li>
-
-
-            &nbsp;     &nbsp;     &nbsp;
-
-
-            <li class="nav-item">
-
-              <a class="nav-link" href="{% url 'user-logout' %}">Sign out &nbsp; <i class="fa fa-sign-out" aria-hidden="true"></i> </a>
-
-            </li>
-
-
+                <!-- Adding margin to the "Sign out" link to make it appear farther -->
+                <li class="nav-item ml-4">  <!-- 'ml-4' adds margin-left -->
+                    <a class="nav-link" href="{% url 'user-logout' %}"
+                        style="color: #f8f9fa; font-size: 1.2rem; transition: transform 0.3s ease, color 0.3s ease;">
+                        Sign out &nbsp; <i class="fa fa-sign-out" aria-hidden="true"></i>
+                    </a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'register' %}"
+                        style="color: #f8f9fa; font-size: 1.2rem; transition: transform 0.3s ease, color 0.3s ease;">
+                        Register
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'my-login' %}"
+                        style="color: #f8f9fa; font-size: 1.2rem; transition: transform 0.3s ease, color 0.3s ease;">
+                        Login
+                    </a>
+                </li>
+            {% endif %}
         </ul>
-
-        {% else %}
-
-        <li class="nav-item">
-
-          <a class="nav-link" href="{% url 'register' %}"> Register </a>
-
-        </li>
-
-
-        &nbsp;     &nbsp;     &nbsp;
-
-
-        <li class="nav-item">
-
-          <a class="nav-link" href="{% url 'my-login' %}">Login</a>
-
-        </li>
-
-
-        {% endif %}
-
-
-      </div>
-
-
-  </nav>
-
-
-
-
+    </div>
+</nav>

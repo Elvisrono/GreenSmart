@@ -2,15 +2,70 @@
 {% load static %}
 
 {% block content %}
-<!-- Hero Section -->
-<div class="container-fluid hero-section text-center position-relative">
-  <img src="{% static 'images/image9.jpeg' %}" alt="Farm Seedlings" class="img-fluid w-100 object-fit-cover">
-  <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75"></div>
+<div class="container-fluid hero-section text-center position-relative p-0">
+  <img src="{% static 'images/image8.jpeg' %}" alt="Farm Seedlings" class="img-fluid w-100" style="object-fit: cover; height: 100vh;">
+  <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
   <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
-    <h1 class="display-4 font-weight-bold">Welcome to Our Seedling Nursery</h1>
-    <p class="lead font-italic">Providing top-notch seedlings for your farming success.</p>
+    <h1 class="display-4 font-weight-bold text-light text-shadow">Welcome to Our Seedling Nursery</h1>
+    <p class="lead font-italic text-light text-shadow">Providing top-notch seedlings for your farming success.</p>
     <a href="#services" class="btn btn-light btn-lg shadow">Explore Our Services</a>
   </div>
 </div>
 
+<!-- Why Choose Us Section -->
+<div class="container my-5 py-5">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <h2 class="text-primary font-weight-bold mb-4">Why Choose Us?</h2>
+      <p class="lead">We are dedicated to providing farmers with premium-quality seedlings to ensure the best possible yield. Here’s why you should choose us:</p>
+      <ul class="list-unstyled">
+        <li><i class="fa fa-check-circle text-success"></i> High-quality seedlings grown with care</li>
+        <li><i class="fa fa-check-circle text-success"></i> Expert advice from experienced agronomists</li>
+        <li><i class="fa fa-check-circle text-success"></i> Affordable pricing with no compromise on quality</li>
+        <li><i class="fa fa-check-circle text-success"></i> Commitment to sustainable farming practices</li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <img src="{% static 'images/image9.jpeg' %}" alt="Why Choose Us" class="img-fluid rounded shadow">
+    </div>
+  </div>
+</div>
+
+<!-- Seedlings Section -->
+<div class="container my-5 py-5">
+  <h2 class="text-center text-primary font-weight-bold mb-4">Seedlings We Grow</h2>
+  <p class="text-center lead mb-5">Explore the variety of seedlings grown in our nursery, perfect for all your farming needs.</p>
+  <div class="row">
+    <!-- Card 1 -->
+    <div class="col-md-4 mb-4">
+      <div class="card shadow h-100">
+        <img src="{% static 'images/tomatoe.jpg' %}" class="card-img-top" alt="Tomato Seedlings">
+        <div class="card-body">
+          <h5 class="card-title">Tomato Seedlings</h5>
+          <p class="card-text">High-yield tomato varieties carefully grown for your farm's success.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="col-md-4 mb-4">
+      <div class="card shadow h-100">
+        <img src="{% static 'images/cabbage.jpg' %}" class="card-img-top" alt="Cabbage Seedlings">
+        <div class="card-body">
+          <h5 class="card-title">Cabbage Seedlings</h5>
+          <p class="card-text">Robust cabbage seedlings designed for a healthy and abundant harvest.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="col-md-4 mb-4">
+      <div class="card shadow h-100">
+        <img src="{% static 'images/tomatoe.jpg' %}" class="card-img-top" alt="Pepper Seedlings">
+        <div class="card-body">
+          <h5 class="card-title">Pepper Seedlings</h5>
+          <p class="card-text">Vibrant pepper seedlings to bring flavor and value to your farm.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}

@@ -179,6 +179,8 @@ body.dark-theme{
   overflow: hidden; /*For animation*/
 }
 
+/*nav*/
+
 
 
 /*=============== HOME ===============*/
@@ -201,6 +203,31 @@ body.dark-theme{
 /*  background-size: cover;*/
 /*  background-position: center;*/
 /*}*/
+
+.navbar-nav .nav-link {
+    color: #f8f9fa; /* Default color (light) */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffc107; /* Change to a golden color on hover */
+    text-decoration: none; /* Remove underline */
+    transform: scale(1.1); /* Slight zoom effect */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: #ffc107; /* Change brand color on hover */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+.list-unstyled li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
 
 .home__container {
   display: flex;
