@@ -50,6 +50,9 @@ def my_login(request):
 def dashboard(request):
     return render(request, 'dashboard.html')
 
+def about_us(request):
+    return render(request, 'about-us.html')
+
 def user_logout(request):
     auth.logout(request)
     messages.success(request, "You have been logged out.")
