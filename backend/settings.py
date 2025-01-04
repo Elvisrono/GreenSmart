@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-xkd2twn$=#qn^7rzbwazoy(#d80ph=2fbm^el@3$8dylbr6#dh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.vercel.app','localhost','127.0.0.1','.now.sh']
 
 
 # Application definition
@@ -82,18 +82,18 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
-# import dj_database_url
-#
 # DATABASES = {
-#     'default': dj_database_url.config(default='postgresql://philiphseedlings_user:5SS26B6IGa2cU53WvR4P2eAsJ7eQg9hR@dpg-cts312jtq21c7395l6u0-a.frankfurt-postgres.render.com/philiphseedlings')
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
 # }
+
+import dj_database_url
+
+DATABASES = {
+    'default': dj_database_url.config(default='postgresql://philiphseedlings_user:5SS26B6IGa2cU53WvR4P2eAsJ7eQg9hR@dpg-cts312jtq21c7395l6u0-a.frankfurt-postgres.render.com/philiphseedlings')
+}
 
 
 
@@ -131,16 +131,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = '/static/'
 
-# This is where your static files are stored during development
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_URL = 'static/'
 
-# This is used for production (if DEBUG=False), and when you use `collectstatic`
-# Only needed for deployment.
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-# Media files (uploads like images, etc.)
+STATICFILES_DIRS =[os.path.join(BASE_DIR,'static')]
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build','static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
