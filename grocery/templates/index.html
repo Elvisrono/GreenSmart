@@ -1,13 +1,36 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+
+<style>
+    :root {
+        --first-color: hsl(var(--hue), 24%, 32%);
+        --first-color-alt: hsl(var(--hue), 24%, 28%);
+        --first-color-light: hsl(var(--hue), 24%, 66%);
+        --first-color-lighten: hsl(var(--hue), 24%, 92%);
+    }
+
+    .custom-header {
+        background-color: var(--first-color);
+        color: white;
+    }
+
+    .custom {
+        background-color: var(--first-color);
+        border: none;
+    }
+
+    .custom-button:hover {
+        background-color: var(--first-color-alt);
+    }
+</style>
 <div class="hero-section text-center text-white d-flex align-items-center justify-content-center position-relative"
      style="background-image: url('static/images/image9.jpeg'); background-size: cover; background-position: center center; height: 100vh; object-fit: cover;">
     <div class="overlay bg-dark position-absolute top-0 start-0 w-100 h-100" style="opacity: 0.4;"></div>
     <div class="content position-relative z-index-2">
-        <h1 class="display-4 font-weight-bold">SmartFarm Management</h1>
-        <p class="lead">Track your records effectively and effortlessly!</p>
-        <a class="btn btn-primary btn-lg mt-3" href="{% url 'register' %}">
+        <h1 class="display-4 font-weight-bold text-light">PhiliphSeedlings</h1>
+        <p class="lead font-italic text-light text-shadow">We provide top quality seedlings for your farming success</p>
+        <a class="btn btn-success btn-lg mt-3" href="{% url 'register' %}">
             Create Your Account &nbsp; <i class="fa fa-user-plus" aria-hidden="true"></i>
         </a>
     </div>

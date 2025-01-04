@@ -337,88 +337,9 @@ body.dark-theme{
   transform: translateX(.25rem);
 }
 
-/*=============== ABOUT ===============*/
-.about__container{
-  row-gap: 2rem;
-}
-
-.about__img{
-  width: 280px;
-  justify-self: center;
-}
-
-.about__title{
-  margin-bottom: var(--mb-1);
-}
-
-.about__description{
-  margin-bottom: var(--mb-2);
-}
-
-.about__details{
-  display: grid;
-  row-gap: 1rem;
-  margin-bottom: var(--mb-2-5);
-}
-
-.about__details-description{
-  display: inline-flex;
-  column-gap: .5rem;
-  font-size: var(--small-font-size);
-}
-
-.about__details-icon{
-  font-size: 1rem;
-  color: var(--first-color);
-  margin-top: .15rem;
-}
 
 
-/*testimonies*/
-.testimonials{
-    margin: 80px auto;
-    padding: 0 80px;
-    position: relative;
-}
-.slider{
-    overflow: hidden;
-}
-.slider ul{
-    display: flex;
-    width: 200;
-    overflow-x: hidden;
-    transition: 0.5s;
-}
-.slider ul li{
-    list-style: none;
-    width: 50%;
-    padding: 20px;
 
-}
-.slide{
-    box-shadow: 0 0 20px rgba(0,0,0,0.05);
-    padding: 40px;
-    border-radius: 10px;
-    color: #676767;
-    line-height: 1.4;
-}
-
-.slide img {
-    width: 80px;
-    border-radius: 50%;
-    margin-right: 10px;
-    border: 4px solid #212EA0;
-}
-
-.user-info{
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    font-size: 15px;
-}
-.user-info h3{
-    color: #212ea0;
-}
 
 /*=============== STEPS ===============*/
 .steps__bg{
@@ -530,66 +451,7 @@ body.dark-theme{
   transform: translateY(-.5rem);
 }
 
-/*=============== QUESTIONS ===============*/
-.questions{
-  background-color: var(--first-color-lighten);
-}
 
-.questions__container{
-  gap: 1.5rem;
-  padding: 1.5rem 0;
-}
-
-.questions__group{
-  display: grid;
-  row-gap: 1.5rem;
-}
-
-.questions__item{
-  background-color: var(--container-color);
-  border-radius: .25rem;
-}
-
-.questions__item-title{
-  font-size: var(--small-font-size);
-  font-weight: var(--font-medium);
-}
-
-.questions__icon{
-  font-size: 1.25rem;
-  color: var(--title-color);
-}
-
-.questions__description{
-  font-size: var(--smaller-font-size);
-  padding: 0 1.25rem 1.25rem 2.5rem;
-}
-
-.questions__header{
-  display: flex;
-  align-items: center;
-  column-gap: .5rem;
-  padding: .75rem .5rem;
-  cursor: pointer;
-}
-
-.questions__content{
-  overflow: hidden;
-  height: 0;
-}
-
-.questions__item,
-.questions__header,
-.questions__item-title,
-.questions__icon,
-.questions__description,
-.questions__content{
-  transition: .3s;
-}
-
-.questions__item:hover{
-  box-shadow: 0 2px 8px hsla(var(--hue), 4%, 15%, .15);
-}
 
 /*Rotate icon, change color of titles and background*/
 .accordion-open .questions__header,
@@ -789,45 +651,10 @@ body.dark-theme{
   margin: 5rem 0 1rem;
 }
 
-/*=============== SCROLL UP ===============*/
-.scrollup{
-  position: fixed;
-  background-color: var(--first-color);
-  right: 1rem;
-  bottom: -30%;
-  display: inline-flex;
-  padding: .5rem;
-  border-radius: .25rem;
-  z-index: var(--z-tooltip);
-  opacity: .8;
-  transition: .4s;
-}
 
-.scrollup__icon{
-  font-size: 1rem;
-  color: #FFF;
-}
 
-.scrollup:hover{
-  background-color: var(--first-color-alt);
-  opacity: 1;
-}
 
-/* Show Scroll Up*/
-.show-scroll{
-  bottom: 3rem;
-}
 
-/*=============== SCROLL BAR ===============*/
-::-webkit-scrollbar{
-  width: .6rem;
-  background: hsl(var(--hue), 4%, 53%);
-}
-
-::-webkit-scrollbar-thumb{
-  background: hsl(var(--hue), 4%, 29%);
-  border-radius: .5rem;
-}
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
@@ -932,115 +759,6 @@ body.dark-theme{
   }
 }
 
-/* For large devices */
-@media screen and (min-width: 992px){
-  .container{
-    margin-left: auto;
-    margin-right: auto;
-  }
 
-  .section{
-    padding: 8rem 0 1rem;
-  }
-  .section__title,
-  .section__title-center{
-    font-size: var(--h1-font-size);
-  }
-
-  .home{
-    padding: 13rem 0 5rem;
-  }
-  .home__img{
-    width: 350px;
-  }
-  .home__description{
-    padding-right: 7rem;
-  }
-
-  .about__img{
-    width: 380px;
-  }
-
-  .steps__container{
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .steps__bg{
-    padding: 3.5rem 2.5rem;
-  }
-  .steps__card-title{
-    font-size: var(--normal-font-size);
-  }
-
-  .product__description{
-    padding: 0 16rem;
-  }
-  .product__container{
-    padding: 4rem 0;
-    grid-template-columns: repeat(3, 185px);
-    gap: 4rem 6rem;
-  }
-  .product__img{
-    width: 160px;
-  }
-  .product__circle{
-    width: 110px;
-    height: 110px;
-  }
-  .product__title,
-  .product__price{
-    font-size: var(--normal-font-size);
-  }
-
-  .questions__container{
-    padding: 1rem 0 4rem;
-  }
-  .questions__title{
-    text-align: initial;
-  }
-  .questions__group{
-    row-gap: 2rem;
-  }
-  .questions__header{
-    padding: 1rem;
-  }
-  .questions__description{
-    padding: 0 3.5rem 2.25rem 2.75rem;
-  }
-
-  .footer__logo{
-    font-size: var(--h3-font-size);
-  }
-  .footer__container{
-    grid-template-columns: 1fr .5fr .5fr .5fr;
-  }
-  .footer__copy{
-    margin: 7rem 0 2rem;
-  }
-}
-
-@media screen and (min-width: 1200px){
-  .home__social{
-    right: -3rem;
-    row-gap: 4.5rem;
-  }
-  .home__social-follow{
-    font-size: var(--small-font-size);
-  }
-  .home__social-follow::after{
-    width: 1.5rem;
-    right: -60%;
-  }
-  .home__social-link{
-    font-size: 1.15rem;
-  }
-
-  .about__container{
-    column-gap: 7rem;
-  }
-
-  .scrollup{
-    right: 3rem;
-  }
-}
 
 

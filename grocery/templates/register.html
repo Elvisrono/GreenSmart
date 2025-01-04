@@ -4,60 +4,76 @@
 
 {% block content %}
 
-    <body>
+<style>
+    :root {
+        --first-color: hsl(var(--hue), 24%, 32%);
+        --first-color-alt: hsl(var(--hue), 24%, 28%);
+        --first-color-light: hsl(var(--hue), 24%, 66%);
+        --first-color-lighten: hsl(var(--hue), 24%, 92%);
+    }
 
-        <div class="container bg-light shadow-md p-5 form-layout">
+    .custom-header {
+        background-color: var(--first-color);
+        color: white;
+    }
 
-            <h3> Create your account </h3>
+    .custom-button {
+        background-color: var(--first-color);
+        border: none;
+    }
 
-            <h5> Start managing your clients today! </h5>
+    .custom-button:hover {
+        background-color: var(--first-color-alt);
+    }
+</style>
 
-            <hr>
-            <br>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-sm-10">
+            <div class="card shadow-lg border-0">
+                <!-- Header -->
+                <div class="card-header custom-header text-center">
+                    <h3 class="mb-1">Create Your Account</h3>
+                    <br>
+                </div>
+                <!-- Body -->
+                <div class="card-body bg-light">
+                    <form method="POST" autocomplete="off">
+                        {% csrf_token %}
 
-            <form method="POST" autocomplete="off">
+                        <div class="form-group mb-3">
+                            {{ form.username|as_crispy_field }}
+                        </div>
 
-                {% csrf_token %}
+                        <div class="form-group mb-3">
+                            {{ form.first_name|as_crispy_field }}
+                        </div>
 
-                {{form.username|as_crispy_field}}
+                        <div class="form-group mb-3">
+                            {{ form.last_name|as_crispy_field }}
+                        </div>
 
-                <br>
+                        <div class="form-group mb-3">
+                            {{ form.password1|as_crispy_field }}
+                        </div>
 
-                <br>
-                {{form.first_name|as_crispy_field}}
+                        <div class="form-group mb-3">
+                            {{ form.password2|as_crispy_field }}
+                        </div>
 
-                <br>
-                {{form.last_name|as_crispy_field}}
-
-                <br>
-
-                {{form.password1|as_crispy_field}}
-
-                <br>
-
-                {{form.password2|as_crispy_field}}
-
-                <br>
-
-                <button type="submit" class="btn btn-primary w-100 btn-block p-2"> Create account &nbsp; <i class="fa fa-user" aria-hidden="true"></i> </button>
-
-
-            </form>
-
-            <br>
-
-            <div class="text-center">
-
-                <p> Already have an account? </p> <a href="{% url 'my-login' %}"> Login </a>
-
+                        <button type="submit" class="btn custom-button btn-block text-white">
+                            <i class="fa fa-user me-2"></i>Create Account
+                        </button>
+                    </form>
+                </div>
+                <!-- Footer -->
+                <div class="card-footer text-center">
+                    <p class="mb-1">Already have an account?</p>
+                    <a href="{% url 'my-login' %}" class="btn btn-link">Login</a>
+                </div>
             </div>
-
-
         </div>
-
-        <br>
-
-    </body>
-
+    </div>
+</div>
 
 {% endblock %}

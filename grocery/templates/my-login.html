@@ -2,56 +2,66 @@
 
 {% load crispy_forms_tags %}
 
-
 {% block content %}
 
-    <body>
+<style>
+    :root {
+        --first-color: hsl(var(--hue), 24%, 32%);
+        --first-color-alt: hsl(var(--hue), 24%, 28%);
+        --first-color-light: hsl(var(--hue), 24%, 66%);
+        --first-color-lighten: hsl(var(--hue), 24%, 92%);
+    }
 
-        <div class="container bg-light shadow-md p-5 form-layout">
+    .custom-header {
+        background-color: var(--first-color);
+        color: white;
+    }
 
-            <h3> Login to your account </h3>
+    .custom-button {
+        background-color: var(--first-color);
+        border: none;
+    }
 
-            <hr>
-            <br>
+    .custom-button:hover {
+        background-color: var(--first-color-alt);
+    }
+</style>
 
-            <form method="POST" autocomplete="off">
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-sm-10">
+            <div class="card shadow-lg border-0">
+                <!-- Header -->
+                <div class="card-header custom-header text-center">
+                    <h3 class="mb-1">Login to Your Account</h3>
+                    <br>
+                </div>
+                <!-- Body -->
+                <div class="card-body bg-light">
+                    <form method="POST" autocomplete="off">
+                        {% csrf_token %}
 
-                {% csrf_token %}
+                        <div class="form-group mb-3">
+                            {{ form.username|as_crispy_field }}
+                        </div>
 
-                {{form.username|as_crispy_field}}
+                        <div class="form-group mb-3">
+                            {{ form.password|as_crispy_field }}
+                        </div>
 
-                <br>
-
-                {{form.password|as_crispy_field}}
-
-                <br>
-
-                <button type="submit" class="btn btn-primary w-100 btn-block p-2"> Login &nbsp; <i class="fa fa-key" aria-hidden="true"></i> </button>
-
-
-            </form>
-
-            <br>
-
-            <div class="text-center">
-
-                <p> Don't have an account? </p> <a href="{% url 'register' %}"> Register </a>
-
+                        <button type="submit" class="btn custom-button btn-block text-white">
+                            <i class="fa fa-key me-2"></i>Login
+                        </button>
+                    </form>
+                </div>
+                <!-- Footer -->
+                <div class="card-footer text-center">
+                    <p class="mb-1">Don't have an account?</p>
+                    <a href="{% url 'register' %}" class="btn btn-link">Register</a>
+                </div>
             </div>
-
-
         </div>
-
-        <br>
-
-    </body>
+    </div>
+</div>
 
 {% endblock %}
-
-
-
-
-
-
-
-

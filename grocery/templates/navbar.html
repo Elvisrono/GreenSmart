@@ -1,59 +1,59 @@
-<nav class="navbar navbar-expand-lg navbar-dark justify-content-center" style="background-color: #343a40;">
-    <a class="navbar-brand main-heading" href="{% url '' %}" style="margin-right: 2rem; font-size: 1.5rem; font-weight: bold; transition: color 0.3s ease;">
-        Philiphs
+<nav class="navbar navbar-expand-lg navbar-dark justify-content-between" style="background-color: #343a40;">
+    <!-- Brand -->
+    <a class="navbar-brand main-heading px-4" href="{% url '' %}" style="margin-right: 2rem; font-size: 1.5rem; font-weight: bold; transition: color 0.3s ease;">
+        PhiliphSeedlings
     </a>
 
+    <!-- Navbar toggler (for mobile) -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse text-center" id="navbarNavDropdown">
-        <ul class="navbar-nav" style="gap: 1.5rem;">
+    <!-- Navbar content -->
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <!-- Centered Links -->
+        <ul class="navbar-nav mx-auto" style="gap: 1.5rem;">
             {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'dashboard' %}"
-                        style="color: #f8f9fa; font-size: 1.2rem; transition: transform 0.3s ease, color 0.3s ease;">
+                    <a class="nav-link" href="{% url 'dashboard' %}" style="color: #f8f9fa; font-size: 1.2rem; transition: transform 0.3s ease, color 0.3s ease;">
                         Dashboard &nbsp; <i class="fa fa-home" aria-hidden="true"></i>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'dashboard' %}"
-                        style="color: #f8f9fa; font-size: 1.2rem; transition: transform 0.3s ease, color 0.3s ease;">
+                    <a class="nav-link" href="{% url 'dashboard' %}" style="color: #f8f9fa; font-size: 1.2rem; transition: transform 0.3s ease, color 0.3s ease;">
                         Seedlings &nbsp; <i class="fa fa-leaf" aria-hidden="true"></i>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'about-us' %}"
-                        style="color: #f8f9fa; font-size: 1.2rem; transition: transform 0.3s ease, color 0.3s ease;">
+                    <a class="nav-link" href="{% url 'about-us' %}" style="color: #f8f9fa; font-size: 1.2rem; transition: transform 0.3s ease, color 0.3s ease;">
                         About Us &nbsp; <i class="fa fa-info-circle" aria-hidden="true"></i>
-                    </a>
-                </li>
-
-
-
-                <!-- Adding margin to the "Sign out" link to make it appear farther -->
-                <li class="nav-item ml-4">  <!-- 'ml-4' adds margin-left -->
-                    <a class="nav-link" href="{% url 'user-logout' %}"
-                        style="color: #f8f9fa; font-size: 1.2rem; transition: transform 0.3s ease, color 0.3s ease;">
-                        Sign out &nbsp; <i class="fa fa-sign-out" aria-hidden="true"></i>
                     </a>
                 </li>
             {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'register' %}"
-                        style="color: #f8f9fa; font-size: 1.2rem; transition: transform 0.3s ease, color 0.3s ease;">
+                    <a class="nav-link" href="{% url 'register' %}" style="color: #f8f9fa; font-size: 1.2rem; transition: transform 0.3s ease, color 0.3s ease;">
                         Register
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'my-login' %}"
-                        style="color: #f8f9fa; font-size: 1.2rem; transition: transform 0.3s ease, color 0.3s ease;">
+                    <a class="nav-link" href="{% url 'my-login' %}" style="color: #f8f9fa; font-size: 1.2rem; transition: transform 0.3s ease, color 0.3s ease;">
                         Login
                     </a>
                 </li>
             {% endif %}
         </ul>
+
+        <!-- Sign out link -->
+        {% if user.is_authenticated %}
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'user-logout' %}" style="color: #f8f9fa; font-size: 1.2rem; transition: transform 0.3s ease, color 0.3s ease;">
+                        Sign out &nbsp; <i class="fa fa-sign-out" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+        {% endif %}
     </div>
 </nav>
