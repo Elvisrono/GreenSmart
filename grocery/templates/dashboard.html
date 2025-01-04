@@ -2,6 +2,31 @@
 {% load static %}
 
 {% block content %}
+<style>
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    border-radius: 50%; /* Make the icons circular */
+    width: 40px; /* Adjust size */
+    height: 40px;
+}
+
+.testimonials h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+}
+
+.bg-light {
+    background-color: #f8f9fa !important; /* Ensure the light background is visible */
+}
+</style>
+
 <div class="container-fluid hero-section text-center position-relative p-0">
   <img src="{% static 'images/seed.jpg' %}" alt="Farm Seedlings" class="img-fluid w-100 " style="object-fit: cover; height: 100vh;">
   <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
@@ -62,7 +87,7 @@
         <img src="{% static 'images/kles.jpg' %}" class="card-img-top" alt="Pepper Seedlings">
         <div class="card-body">
           <h5 class="card-title">Skuma Tausi F1 <br> @sh 2 per seed</h5>
-          <p class="card-text">Vibrant pepper seedlings to bring flavor and value to your farm.</p>
+          <p class="card-text">Vibrant Sukuma seedlings to bring flavor and value to your farm.</p>
         </div>
       </div>
     </div>
@@ -72,7 +97,7 @@
         <img src="{% static 'images/spinach.jpg' %}" class="card-img-top" alt="Pepper Seedlings">
         <div class="card-body">
           <h5 class="card-title">Spinach<br> @sh 2 per seed</h5>
-          <p class="card-text">Vibrant pepper seedlings to bring flavor and value to your farm.</p>
+          <p class="card-text">Vibrant Spinach seedlings to bring flavor and value to your farm.</p>
         </div>
       </div>
     </div>
@@ -82,10 +107,105 @@
         <img src="{% static 'images/Pilipili hoho.jpg' %}" class="card-img-top" alt="Pepper Seedlings">
         <div class="card-body">
           <h5 class="card-title">Pilipilihoho green<br> @sh 5 per seed</h5>
-          <p class="card-text">Vibrant pepper seedlings to bring flavor and value to your farm.</p>
+          <p class="card-text">Vibrant seedlings to bring flavor and value to your farm.</p>
         </div>
       </div>
     </div>
   </div>
 </div>
+<div class="container py-5 bg-white">
+  <h2 class="text-center text-primary mb-5">What Our Clients Say</h2>
+  <div class="container">
+    <!-- Carousel -->
+    <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <!-- First Slide -->
+        <div class="carousel-item active">
+          <div class="row">
+            <!-- First Testimonial -->
+            <div class="col-12 col-md-6 mb-4 mb-md-0">
+              <div class="slide p-4 shadow-sm rounded bg-light">
+                <div class="user-info d-flex align-items-center mb-3">
+                  <img src="{% static 'images/imageholder.jpg' %}" alt="" class="rounded-circle me-3 border border-primary" style="width: 80px;">
+                  <div>
+                    <h3 class="text-primary mb-0">Winy Kamau</h3>
+                    <small class="text-muted">Kapsoit, Kericho</small>
+                  </div>
+                </div>
+                <p class="text-muted">
+                  Choosing to shop my seedlings at Philiphs was wan of the best choice. The seedlings they grow are of best quality
+                  seedlings.
+
+                </p>
+              </div>
+            </div>
+            <!-- Second Testimonial -->
+            <div class="col-12 col-md-6 mb-4 mb-md-0">
+              <div class="slide p-4 shadow-sm rounded bg-light">
+                <div class="user-info d-flex align-items-center mb-3">
+                  <img src="{% static 'images/imageholder.jpg' %}" alt="" class="rounded-circle me-3 border border-primary" style="width: 80px;">
+                  <div>
+                    <h3 class="text-primary mb-0">Johana Ngeno</h3>
+                    <small class="text-muted">Sotik Litein</small>
+                  </div>
+                </div>
+                <p class="text-muted">
+                 "I appreciate the personalized attention and quality of seedlings they offer. Simply the best place to get your crops seedlings"
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Second Slide -->
+        <div class="carousel-item">
+          <div class="row">
+            <!-- Third Testimonial -->
+            <div class="col-12 col-md-6 mb-4 mb-md-0">
+              <div class="slide p-4 shadow-sm rounded bg-light">
+                <div class="user-info d-flex align-items-center mb-3">
+                  <img src="{% static 'images/imageholder.jpg' %}" alt="" class="rounded-circle me-3 border border-primary" style="width: 80px;">
+                  <div>
+                    <h3 class="text-primary mb-0">John Doe</h3>
+                    <small class="text-muted">Kipkelion Kericho</small>
+                  </div>
+                </div>
+                <p class="text-muted">
+                  The environment at schoolweb fosters creativity and growth. I'm truly grateful for the support from faculty and peers.
+                </p>
+              </div>
+            </div>
+            <!-- Fourth Testimonial -->
+            <div class="col-12 col-md-6 mb-4 mb-md-0">
+              <div class="slide p-4 shadow-sm rounded bg-light">
+                <div class="user-info d-flex align-items-center mb-3">
+                  <img src="{% static 'images/imageholder.jpg' %}" alt="" class="rounded-circle me-3 border border-primary" style="width: 80px;">
+                  <div>
+                    <h3 class="text-primary mb-0">Alice Kirui </h3>
+                    <small class="text-muted">Chepseon Kericho </small>
+                  </div>
+                </div>
+                <p class="text-muted">
+                 A wonderful place to get all ur Seedlings. If you value quality 👌 this is the place to visit. They have very friendly workers too.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+
 {% endblock %}

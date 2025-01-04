@@ -1,9 +1,11 @@
 from django.contrib import messages, auth
 from django.contrib.auth import authenticate
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
 from grocery.forms import CreateUserForm, LoginForm
+from grocery.models import ContactMessage
 
 
 # Create your views here.
@@ -30,6 +32,27 @@ def register(request):
     context = {'form':form}
 
     return render(request, 'register.html', context=context)
+
+def contact(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')  # Make sure you're using .get(), not ()
+        subject = request.POST.get('subject')
+        phone_number = request.POST.get('phone_number')
+        message = request.POST.get('message')
+
+        # Save the data to the database
+        contact_message = ContactMessage(
+            email=email,
+            subject=subject,
+            phone_number=phone_number,
+            message=message
+        )
+        contact_message.save()
+
+        messages.success(request, "Message has been sent successfully!")
+
+    return render(request, 'about-us.html')
+
 
 def my_login(request):
     form = LoginForm()
