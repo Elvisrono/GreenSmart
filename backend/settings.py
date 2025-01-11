@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'grocery',
     'crispy_forms',
     'crispy_bootstrap4',
-    'django_daraja'
+
 
 ]
 
