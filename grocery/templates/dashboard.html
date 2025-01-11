@@ -3,6 +3,65 @@
 
 {% block content %}
 
+
+<!-- Add this to your CSS -->
+<style>
+    .hero-header {
+        background: linear-gradient(rgba(248, 223, 173, 0.1), rgba(248, 223, 173, 0.1)), url("{% static 'images/hero-img.jpg' %}");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+
+  /* Hover effect for zooming in the whole card */
+  .hover-zoom {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+
+  .hover-zoom:hover {
+    transform: scale(1.05); /* Zoom in effect */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Apply yellow border to the entire card */
+  .custom-card {
+    border: 1px solid yellow; /* Yellow border */
+    border-radius: 5px; /* Optional: for rounded corners */
+  }
+
+  /* Ensure the image also zooms in when the card is hovered */
+  .card-img-container {
+    overflow: hidden; /* Prevent image from spilling out of the card */
+  }
+
+  .card-img-container img {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .hover-zoom:hover .card-img-container img {
+    transform: scale(1.1); /* Image zoom effect */
+  }
+
+  /* Optional: Adjust height of the image */
+  .card-img-container img {
+    height: 200px; /* Set a fixed height for the image */
+    object-fit: cover;
+  }
+
+  /* Button style */
+  .btn-primary {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: yellow;
+    color: black;
+  }
+</style>
+
+
+
 <div id="heroCarousel" class="carousel carousel-fade" data-ride="carousel">
     <!-- Carousel Inner -->
     <div class="carousel-inner">
@@ -12,7 +71,7 @@
             <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
                 <h1 class="display-4 font-weight-bold text-light text-shadow">Welcome to Our Seedling Nursery</h1>
                 <p class="lead font-italic text-light text-shadow">Providing top-notch seedlings for your farming success.</p>
-                <a href="#services" class="btn btn-light btn-lg shadow">Explore Our Services</a>
+<!--                <a href="#services" class="btn btn-light btn-lg shadow m-10">Explore Our Services</a>-->
             </div>
         </div>
 
@@ -22,7 +81,7 @@
             <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
                 <h1 class="display-4 font-weight-bold text-light text-shadow">Sustainable Farming Solutions</h1>
                 <p class="lead font-italic text-light text-shadow">Promoting eco-friendly methods for your farm's growth.</p>
-                <a href="#services" class="btn btn-light btn-lg shadow">Explore Our Services</a>
+<!--                <a href="#services" class="btn btn-light btn-lg shadow mt-10">Explore Our Services</a>-->
             </div>
         </div>
 
@@ -32,7 +91,7 @@
             <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
                 <h1 class="display-4 font-weight-bold text-light text-shadow">Healthy and Organic Plants</h1>
                 <p class="lead font-italic text-light text-shadow">We provide organic seedlings for better yield.</p>
-                <a href="#services" class="btn btn-light btn-lg shadow">Explore Our Services</a>
+<!--                <a href="#services" class="btn btn-light btn-lg shadow mt-10">Explore Our Services</a>-->
             </div>
         </div>
     </div>
@@ -55,8 +114,8 @@
 <div class="container my-5 py-5">
   <div class="row align-items-center">
     <div class="col-md-6">
-      <h2 class="text-primary font-weight-bold mb-4">Why Choose Us?</h2>
-      <p class="lead">We are dedicated to providing farmers with premium-quality seedlings to ensure the best possible yield. Here’s why you should choose us:</p>
+      <h2 class="text-primary font-weight-bold mb-4" style="font-size: 2.5rem; line-height: 1.2;">Why Choose Us?</h2>
+      <p class="lead" style="font-size: 1.125rem; line-height: 1.6;">We are dedicated to providing farmers with premium-quality seedlings to ensure the best possible yield. Here’s why you should choose us:</p>
       <ul class="list-unstyled">
         <li><i class="fa fa-check-circle text-success"></i> High-quality seedlings grown with care</li>
         <li><i class="fa fa-check-circle text-success"></i> Expert advice from experienced agronomists</li>
@@ -65,11 +124,60 @@
       </ul>
     </div>
     <div class="col-md-6">
-      <img src="{% static 'images/image9.jpeg' %}" alt="Why Choose Us" class="img-fluid rounded-circle shadow-xl">
+      <img src="{% static 'images/image8.jpeg' %}" alt="Why Choose Us" class="img-fluid rounded-circle shadow-xl" style="max-width: 500px; height: auto;">
     </div>
   </div>
 </div>
 
+
+ <!-- Hero Start -->
+        <div class="container-fluid py-5 mb-5 hero-header">
+            <div class="container py-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-md-12 col-lg-7">
+                        <h4 class="mb-3 text-secondary">100% Quality Seedlings</h4>
+                        <h1 class="mb-5 display-3 text-primary">Top Seeds</h1>
+                        <div class="position-relative mx-auto">
+                            <input class="form-control border-2 border-secondary w-75 py-4 px-4 rounded-pill" type="number" placeholder="Search">
+                            <button type="submit" class="btn btn-primary border-2 border-secondary py-3 px-4 position-absolute rounded-pill text-white h-100" style="top: 0; right: 25%;">Submit Now</button>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-5">
+                        <div id="carouselId" class="carousel slide position-relative" data-bs-ride="carousel">
+                            <div class="carousel-inner" role="listbox">
+
+                                <div class="carousel-item active rounded">
+                                    <img src="{% static 'images/image7.jpeg' %}" class="img-fluid w-100 h-50 bg-secondary rounded" alt="second slide">
+                                    <a href="#" class="btn px-3 py-2 px-sm-4 py-sm-3 text-white rounded">Shop Now</a>
+
+                                </div>
+                                <div class="carousel-item active rounded">
+                                    <img src="{% static 'images/image8.jpeg' %}" class="img-fluid w-100 h-50 bg-secondary rounded" alt="third slide">
+                                    <a href="#" class="btn px-3 py-2 px-sm-4 py-sm-3 text-white rounded">Shop Now</a>
+
+                                </div>
+                                <div class="carousel-item rounded">
+                                    <img src="{% static 'images/image9.jpeg' %}" class="img-fluid w-100 h-100 rounded" alt="fourth slide">
+                                    <a href="#" class="btn px-3 py-2 px-sm-4 py-sm-3 text-white rounded">Shop Now</a>
+
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero End -->
+
+<!-- Seedlings Section -->
 <!-- Seedlings Section -->
 <div class="container my-5 py-5">
   <h2 class="text-center text-primary font-weight-bold mb-4">Seedlings We Grow</h2>
@@ -77,56 +185,149 @@
   <div class="row">
     <!-- Card 1 -->
     <div class="col-md-4 mb-4">
-      <div class="card shadow h-100">
-        <img src="{% static 'images/tomatoe.jpg' %}" class="card-img-top" alt="Tomato Seedlings">
+      <div class="card shadow-sm hover-zoom custom-card">
+        <div class="card-img-container">
+          <img src="{% static 'images/tomatoe.jpg' %}" class="card-img-top img-fluid" alt="Tomato Seedlings">
+        </div>
         <div class="card-body">
-          <h5 class="card-title">Tomato Terminator f1 <br> @sh 4 per seed </h5>
+          <h5 class="card-title text-success">Tomato Terminator F1 <br> @sh 4 per seed</h5>
           <p class="card-text">High-yield tomato varieties carefully grown for your farm's success.</p>
+          <a href="#" class="btn btn-primary">Shop Now</a>
         </div>
       </div>
     </div>
     <!-- Card 2 -->
     <div class="col-md-4 mb-4">
-      <div class="card shadow h-100">
-        <img src="{% static 'images/cabbage.jpg' %}" class="card-img-top" alt="Cabbage Seedlings">
+      <div class="card shadow-sm hover-zoom custom-card">
+        <div class="card-img-container">
+          <img src="{% static 'images/cabbage.jpg' %}" class="card-img-top img-fluid" alt="Cabbage Seedlings">
+        </div>
         <div class="card-body">
-          <h5 class="card-title">Cabbage Gloria F1 <br> @sh2.5 per seed</h5>
+          <h5 class="card-title text-success">Cabbage Gloria F1 <br> @sh 2.5 per seed</h5>
           <p class="card-text">Robust cabbage seedlings designed for a healthy and abundant harvest.</p>
+          <a href="#" class="btn btn-primary">Shop Now</a>
         </div>
       </div>
     </div>
     <!-- Card 3 -->
     <div class="col-md-4 mb-4">
-      <div class="card shadow h-100">
-        <img src="{% static 'images/kles.jpg' %}" class="card-img-top" alt="Pepper Seedlings">
+      <div class="card shadow-sm hover-zoom custom-card">
+        <div class="card-img-container">
+          <img src="{% static 'images/kles.jpg' %}" class="card-img-top img-fluid" alt="Pepper Seedlings">
+        </div>
         <div class="card-body">
-          <h5 class="card-title">Skuma Tausi F1 <br> @sh 2 per seed</h5>
+          <h5 class="card-title text-success">Skuma Tausi F1 <br> @sh 2 per seed</h5>
           <p class="card-text">Vibrant Sukuma seedlings to bring flavor and value to your farm.</p>
+          <a href="#" class="btn btn-primary">Shop Now</a>
         </div>
       </div>
     </div>
-<!--    card4-->
+    <!-- Card 4 -->
     <div class="col-md-4 mb-4">
-      <div class="card shadow h-100">
-        <img src="{% static 'images/spinach.jpg' %}" class="card-img-top" alt="Pepper Seedlings">
+      <div class="card shadow-sm hover-zoom custom-card">
+        <div class="card-img-container">
+          <img src="{% static 'images/spinach.jpg' %}" class="card-img-top img-fluid" alt="Spinach Seedlings">
+        </div>
         <div class="card-body">
-          <h5 class="card-title">Spinach<br> @sh 2 per seed</h5>
+          <h5 class="card-title text-success">Spinach <br> @sh 2 per seed</h5>
           <p class="card-text">Vibrant Spinach seedlings to bring flavor and value to your farm.</p>
+          <a href="#" class="btn btn-primary">Shop Now</a>
         </div>
       </div>
     </div>
-<!--      card5-->
+    <!-- Card 5 -->
     <div class="col-md-4 mb-4">
-      <div class="card shadow h-100">
-        <img src="{% static 'images/Pilipili hoho.jpg' %}" class="card-img-top" alt="Pepper Seedlings">
+      <div class="card shadow-sm hover-zoom custom-card">
+        <div class="card-img-container">
+          <img src="{% static 'images/Pilipili hoho.jpg' %}" class="card-img-top img-fluid" alt="Pilipilihoho Seedlings">
+        </div>
         <div class="card-body">
-          <h5 class="card-title">Pilipilihoho green<br> @sh 5 per seed</h5>
+          <h5 class="card-title text-success">Pilipilihoho Green <br> @sh 5 per seed</h5>
           <p class="card-text">Vibrant seedlings to bring flavor and value to your farm.</p>
+          <a href="#" class="btn btn-primary">Shop Now</a>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
+
+<!-- Banner Section Start-->
+        <div class="container-fluid banner my-5" style="background-color: #D7DE50;">
+            <div class="container py-5">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="py-4">
+                            <h1 class="display-3 text-white">Fresh Quality Seedlings</h1>
+                            <p class="fw-normal display-3 text-dark mb-4">from our Grocery Farm</p>
+                            <p class="mb-4 text-dark">We are always available and ready to serve you</p>
+                            <a href="#" class="banner-btn btn border-2 border-white rounded-pill text-dark py-3 px-5">BUY</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="position-relative">
+                            <img src="{% static 'images/image9.jpeg' %}" class="img-fluid w-100 rounded" alt="">
+                            <div class="d-flex align-items-center justify-content-center bg-white rounded-circle position-absolute" style="width: 150px; height: 150px; top: 0; left: 0;">
+                                <h1 style="font-size: 70px;">1</h1>
+                                <div class="d-flex flex-column">
+                                  <span class="h2 mb-0">
+                                    500 <small style="font-size: 50%;">ksh</small>
+                                  </span>
+                                  <span class="h4 text-muted mb-0">tray</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Banner Section End -->
+
+
+
+ <!-- Fact Start -->
+        <div class="container-fluid py-5">
+            <div class="container">
+                <div class="bg-light p-5 rounded">
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-md-6 col-lg-6 col-xl-3">
+                            <div class="counter bg-white rounded p-5">
+                                <i class="fa fa-users text-secondary"></i>
+                                <h4>satisfied customers</h4>
+                                <h1>500+</h1>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-xl-3">
+                            <div class="counter bg-white rounded p-5">
+                                <i class="fa fa-users text-secondary"></i>
+                                <h4>quality of service</h4>
+                                <h1>99%</h1>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-xl-3">
+                            <div class="counter bg-white rounded p-5">
+                                <i class="fa fa-users text-secondary"></i>
+                                <h4>Years Of Experience</h4>
+                                <h1>4+</h1>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-xl-3">
+                            <div class="counter bg-white rounded p-5">
+                                <i class="fa fa-users text-secondary"></i>
+                                <h4>Available Seedlings</h4>
+                                <h1>10,000+</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Fact Start -->
+
+
 <div class="container py-5 bg-white">
   <h2 class="text-center text-primary mb-5">What Our Clients Say</h2>
   <div class="container">
@@ -220,6 +421,95 @@
     </div>
   </div>
 </div>
+
+
+<!--&lt;!&ndash; Tastimonial Start &ndash;&gt;-->
+<!--        <div class="container-fluid testimonial py-5">-->
+<!--            <div class="container py-5">-->
+<!--                <div class="testimonial-header text-center">-->
+<!--                    <h4 class="text-primary">Our Testimonial</h4>-->
+<!--                    <h1 class="display-5 mb-5 text-dark">Our Client Saying!</h1>-->
+<!--                </div>-->
+<!--                <div class="owl-carousel testimonial-carousel">-->
+<!--                    <div class="testimonial-item img-border-radius bg-light rounded p-4">-->
+<!--                        <div class="position-relative">-->
+<!--                            <i class="fa fa-quote-right fa-2x text-secondary position-absolute" style="bottom: 30px; right: 0;"></i>-->
+<!--                            <div class="mb-4 pb-4 border-bottom border-secondary">-->
+<!--                                <p class="mb-0">Lorem Ipsum is simply dummy text of the printing Ipsum has been the industry's standard dummy text ever since the 1500s,-->
+<!--                                </p>-->
+<!--                            </div>-->
+<!--                            <div class="d-flex align-items-center flex-nowrap">-->
+<!--                                <div class="bg-secondary rounded">-->
+<!--                                    <img src="img/testimonial-1.jpg" class="img-fluid rounded" style="width: 100px; height: 100px;" alt="">-->
+<!--                                </div>-->
+<!--                                <div class="ms-4 d-block">-->
+<!--                                    <h4 class="text-dark">Client Name</h4>-->
+<!--                                    <p class="m-0 pb-3">Profession</p>-->
+<!--                                    <div class="d-flex pe-5">-->
+<!--                                        <i class="fas fa-star text-primary"></i>-->
+<!--                                        <i class="fas fa-star text-primary"></i>-->
+<!--                                        <i class="fas fa-star text-primary"></i>-->
+<!--                                        <i class="fas fa-star text-primary"></i>-->
+<!--                                        <i class="fas fa-star"></i>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="testimonial-item img-border-radius bg-light rounded p-4">-->
+<!--                        <div class="position-relative">-->
+<!--                            <i class="fa fa-quote-right fa-2x text-secondary position-absolute" style="bottom: 30px; right: 0;"></i>-->
+<!--                            <div class="mb-4 pb-4 border-bottom border-secondary">-->
+<!--                                <p class="mb-0">Lorem Ipsum is simply dummy text of the printing Ipsum has been the industry's standard dummy text ever since the 1500s,-->
+<!--                                </p>-->
+<!--                            </div>-->
+<!--                            <div class="d-flex align-items-center flex-nowrap">-->
+<!--                                <div class="bg-secondary rounded">-->
+<!--                                    <img src="img/testimonial-1.jpg" class="img-fluid rounded" style="width: 100px; height: 100px;" alt="">-->
+<!--                                </div>-->
+<!--                                <div class="ms-4 d-block">-->
+<!--                                    <h4 class="text-dark">Client Name</h4>-->
+<!--                                    <p class="m-0 pb-3">Profession</p>-->
+<!--                                    <div class="d-flex pe-5">-->
+<!--                                        <i class="fas fa-star text-primary"></i>-->
+<!--                                        <i class="fas fa-star text-primary"></i>-->
+<!--                                        <i class="fas fa-star text-primary"></i>-->
+<!--                                        <i class="fas fa-star text-primary"></i>-->
+<!--                                        <i class="fas fa-star text-primary"></i>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="testimonial-item img-border-radius bg-light rounded p-4">-->
+<!--                        <div class="position-relative">-->
+<!--                            <i class="fa fa-quote-right fa-2x text-secondary position-absolute" style="bottom: 30px; right: 0;"></i>-->
+<!--                            <div class="mb-4 pb-4 border-bottom border-secondary">-->
+<!--                                <p class="mb-0">Lorem Ipsum is simply dummy text of the printing Ipsum has been the industry's standard dummy text ever since the 1500s,-->
+<!--                                </p>-->
+<!--                            </div>-->
+<!--                            <div class="d-flex align-items-center flex-nowrap">-->
+<!--                                <div class="bg-secondary rounded">-->
+<!--                                    <img src="img/testimonial-1.jpg" class="img-fluid rounded" style="width: 100px; height: 100px;" alt="">-->
+<!--                                </div>-->
+<!--                                <div class="ms-4 d-block">-->
+<!--                                    <h4 class="text-dark">Client Name</h4>-->
+<!--                                    <p class="m-0 pb-3">Profession</p>-->
+<!--                                    <div class="d-flex pe-5">-->
+<!--                                        <i class="fas fa-star text-primary"></i>-->
+<!--                                        <i class="fas fa-star text-primary"></i>-->
+<!--                                        <i class="fas fa-star text-primary"></i>-->
+<!--                                        <i class="fas fa-star text-primary"></i>-->
+<!--                                        <i class="fas fa-star text-primary"></i>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; Tastimonial End &ndash;&gt;-->
 
 
 {% endblock %}

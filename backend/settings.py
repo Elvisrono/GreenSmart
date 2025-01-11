@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-xkd2twn$=#qn^7rzbwazoy(#d80ph=2fbm^el@3$8dylbr6#dh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.vercel.app','localhost','127.0.0.1','.now.sh']
 
@@ -41,7 +41,8 @@ INSTALLED_APPS = [
 
     'grocery',
     'crispy_forms',
-    'crispy_bootstrap4'
+    'crispy_bootstrap4',
+    'django_daraja'
 
 ]
 
@@ -81,18 +82,18 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-import dj_database_url
-
 DATABASES = {
-    'default': dj_database_url.config(default='postgresql://philiphseedlings_user:5SS26B6IGa2cU53WvR4P2eAsJ7eQg9hR@dpg-cts312jtq21c7395l6u0-a.frankfurt-postgres.render.com/philiphseedlings')
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
+# import dj_database_url
+#
+# DATABASES = {
+#     'default': dj_database_url.config(default='postgresql://philiphseedlings_user:5SS26B6IGa2cU53WvR4P2eAsJ7eQg9hR@dpg-cts312jtq21c7395l6u0-a.frankfurt-postgres.render.com/philiphseedlings')
+# }
 
 
 
@@ -158,3 +159,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+MPESA_ENVIRONMENT = 'sandbox'
+MPESA_CONSUMER_KEY = '7GnLegfttgAYa9DyQHqNB9bwsjVSVZDAL8Hd6iTJXGLAsgjz'
+MPESA_CONSUMER_SECRET = 'lGf7Aauq1qsknkD5AQazVIayyA2uOLAx4cegvu64cpjtLIu9Rq7TGyd68rSj9FAK'
+MPESA_SHORTCODE = '174379'
+MPESA_EXPRESS_SHORTCODE = '174379'
+MPESA_SHORTCODE_TYPE = 'paybill'
+MPESA_PASSKEY = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919'
+MPESA_INITIATOR_USERNAME = 'testapi'
+MPESA_INITIATOR_SECURITY_CREDENTIALS = 'Safaricom999!*!'

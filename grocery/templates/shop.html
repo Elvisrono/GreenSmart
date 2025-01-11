@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Single Page Header start -->
+<div class="container-fluid page-header py-5">
+    <h1 class="text-center text-white display-6">Shop</h1>
+    <ol class="breadcrumb justify-content-center mb-0">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Pages</a></li>
+        <li class="breadcrumb-item active text-white">Shop</li>
+    </ol>
+</div>
+        <!-- Single Page Header End -->
+<div class="container my-5">
+    <div class="row g-4 justify-content-center">
+        {% for seedling in seedlings %}
+        <!-- Fruit Item 1 -->
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+            <div class="rounded position-relative fruite-item">
+                <div class="fruite-img">
+                    {% if seedling.image %}
+                    <img src="{{ seedling.image.url }}" class="img-fluid w-100 rounded-top" alt="{{ seedling.name }}">
+                    {% else %}
+                <img src="{% static 'images/imageholder.jpg'%}" alt="No image" style="width: 80px; height: 80px; object-fit: cover">
+                {% endif %}
+                </div>
+                <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Fruits</div>
+                <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                    <h4>{{ seedling.name }}</h4>
+                    <p>{{ seedling.description }}</p>
+                    <div class="d-flex justify-content-between flex-wrap">
+                        <p class="text-dark fs-5 fw-bold mb-0">ksh{{ seedling.price }}kg</p>
+                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary mt-2 mt-md-0">
+                            <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+        <!-- Pagination Section -->
+    </div>
+</div>
+
+
+
+{% endblock %}

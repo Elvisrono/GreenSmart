@@ -15,10 +15,27 @@
 
         <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css'%}">
 
-        <link rel="stylesheet" rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@600;800&display=swap" rel="stylesheet">
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
+        <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+        <link href="{% static 'mss/bootstrap.min.css' %}" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+
 
     </head>
 
@@ -61,62 +78,70 @@
 
 
         </div>
-         <footer class="footer section">
-            <div class="footer__container container grid">
-                <div class="footer__content">
-                    <a href="#" class="footer__logo">
-                        <i class="ri-leaf-line footer__logo-icon"></i> Philiphs seedlings
-                    </a>
-
-                    <h3 class="footer__title">
-                        Subscribe to our newsletter <br> to stay update
-                    </h3>
-
-                    <div class="footer__subscribe">
-                        <input type="email" placeholder="Enter your email" class="footer__input">
-
-                        <button class="button button--flex footer__button">
-                            Subscribe
-                            <i class="ri-arrow-right-up-line button__icon"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="footer__content">
-                    <h3 class="footer__title">Our Location</h3>
-
-                    <ul class="footer__data">
-                        <li class="footer__information">Sitian</li>
-                        <li class="footer__information">Along kedowa - chepseon highway</li>
-                        <li class="footer__information">123-456-789</li>
-                    </ul>
-                </div>
-
-                <div class="footer__content">
-                    <h3 class="footer__title">Contact Us</h3>
-
-                    <ul class="footer__data">
-                        <li class="footer__information">+254 7888 777</li>
-
-                        <div class="footer__social">
-                            <a href="https://www.facebook.com/" class="footer__social-link">
-                                <i class="ri-facebook-fill"></i>
-                            </a>
-                            <a href="https://www.instagram.com/" class="footer__social-link">
-                                <i class="ri-instagram-line"></i>
-                            </a>
-                            <a href="https://twitter.com/" class="footer__social-link">
-                                <i class="ri-twitter-fill"></i>
-                            </a>
-                        </div>
-                    </ul>
-                </div>
-
-
+         <!-- Footer Start -->
+        <!-- Footer Start -->
+<div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
+    <div class="container py-5">
+        <!-- Top Section -->
+        <div class="pb-4 mb-4 d-flex justify-content-between align-items-center" style="border-bottom: 1px solid rgba(226, 175, 24, 0.5);">
+            <!-- Logo Section -->
+            <div>
+                <a href="#">
+                    <h1 class="text-primary mb-0">PhilipSeedlings</h1>
+                    <p class="text-secondary mb-0">Farm & Grocery</p>
+                </a>
             </div>
 
-            <p class="footer__copy">&#169; Developed by elvisrono90@gmail.com</p>
-        </footer>
+            <!-- Empty Column for Future Use -->
+            <div></div>
+
+            <!-- Social Media Links -->
+            <div class="d-flex">
+                <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href="#"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href="#"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href="#"><i class="fab fa-youtube"></i></a>
+                <a class="btn btn-outline-secondary btn-md-square rounded-circle" href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="row g-5">
+            <!-- First Column (Empty for Future Use) -->
+            <div class="col-lg-3 col-md-6"></div>
+
+            <!-- Farm Info Links -->
+            <div class="col-lg-3 col-md-6">
+                <div class="d-flex flex-column text-start footer-item">
+                    <h4 class="text-light mb-3">Farm Info</h4>
+                    <a class="btn-link text-white-50" href="#">About Us</a>
+                    <a class="btn-link text-white-50" href="#">Contact Us</a>
+                    <a class="btn-link text-white-50" href="#">Home</a>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-item">
+                    <h4 class="text-light mb-3">Contact</h4>
+                    <p>Location: Sitian, Chepseon</p>
+                    <p>Email: philipseeds.com</p>
+                    <p>Phone: 0727662869</p>
+                    <p>Payment Accepted</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Copyright Section -->
+<div class="container-fluid copyright bg-dark py-4">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+            <span class="text-light"><i class="fas fa-copyright text-light me-2"></i>PhilipSeedlings, All rights reserved.</span>
+            <span class="text-white">Designed By Elvis</span>
+        </div>
+    </div>
+</div>
 
         <!--=============== SCROLL UP ===============-->
         <a href="#" class="scrollup" id="scroll-up">
@@ -125,6 +150,7 @@
 
 
         <script src="{% static 'js/app.js' %}"></script>
+
 
 
         <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
@@ -139,6 +165,16 @@
 
 <!-- Bootstrap JS -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+        <script src="{% static 'js/main.js' %}"></script>
 
     </body>
 
