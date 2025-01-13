@@ -93,7 +93,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 import dj_database_url
 
 DATABASES = {
-    'default': dj_database_url.config(default='postgresql://philiphseedlings_user:5SS26B6IGa2cU53WvR4P2eAsJ7eQg9hR@dpg-cts312jtq21c7395l6u0-a.frankfurt-postgres.render.com/philiphseedlings')
+    'default': dj_database_url.parse('postgresql://myseeds_user:aMEjUWtEF0uffEmCea6WmGuytH55PcUJ@dpg-cu2hnqt6l47c73c36tm0-a.frankfurt-postgres.render.com/myseeds')
 }
 
 
