@@ -90,12 +90,11 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 #     }
 # }
 
-'''import dj_database_url
+import dj_database_url
 
 DATABASES = {
-    'default': dj_database_url.parse('postgresql://myseeds_user:aMEjUWtEF0uffEmCea6WmGuytH55PcUJ@dpg-cu2hnqt6l47c73c36tm0-a.frankfurt-postgres.render.com/myseeds')
+    'default': dj_database_url.parse('postgresql://seedlings_user:QpwQEJ0CKjpxqnkBJpAW6UV3pswUVMp9@dpg-cu3a5nd2ng1s73c85u8g-a.frankfurt-postgres.render.com/seedlings')
 }
-'''
 
 
 # Password validation
