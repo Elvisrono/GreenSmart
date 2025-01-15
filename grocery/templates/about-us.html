@@ -2,114 +2,110 @@
 {% load static %}
 {% block content %}
 <div class="container mt-5 pt-5">
-<section class="about container py-5 mt-5 pt-5" id="about">
-    <div class="row align-items-center">
-        <div class="col-md-6">
-            <!-- Reduced the image size with custom classes -->
-            <img src="{% static 'images/image7.jpeg' %}" alt="Our Farm" class="img-fluid rounded-circle shadow-xl w-75">
+    <section class="about container py-5 mt-5 pt-5" id="about">
+        <div class="row align-items-center">
+            <!-- Image Section -->
+            <div class="col-md-6 text-center mb-4 mb-md-0">
+                <img src="{% static 'images/image7.jpeg' %}" alt="Our Farm" class="img-fluid rounded-circle shadow-xl w-75">
+            </div>
+            <!-- Text Section -->
+            <div class="col-md-6">
+                <h2 class="display-5 fw-bold mb-4">About Our Farm</h2>
+                <p class="lead">
+                    Welcome to <strong>Smart Greenhouse Farm</strong>, where innovation meets nature. Our farm specializes in cultivating
+                    high-quality crop seedlings in a controlled greenhouse environment. We are dedicated to sustainable farming practices
+                    and providing fresh seedlings to empower farmers around the globe.
+                </p>
+                <ul class="list-group list-group-flush mb-4">
+                    <li class="list-group-item border-0 ps-0">
+                        <i class="bi bi-leaf me-2 text-success"></i> Eco-friendly and sustainable farming practices
+                    </li>
+                    <li class="list-group-item border-0 ps-0">
+                        <i class="bi bi-seedling me-2 text-success"></i> Diverse variety of crop seedlings for every season
+                    </li>
+                    <li class="list-group-item border-0 ps-0">
+                        <i class="bi bi-person-circle me-2 text-success"></i> Experienced agronomists to guide your farming journey
+                    </li>
+                    <li class="list-group-item border-0 ps-0">
+                        <i class="bi bi-globe me-2 text-success"></i> Commitment to supporting local and global agriculture
+                    </li>
+                    <li class="list-group-item border-0 ps-0">
+                        <i class="bi bi-cart-check me-2 text-success"></i> Online ordering system for hassle-free delivery
+                    </li>
+                </ul>
+                <a href="#contact" class="button btn btn-primary">
+                    Learn More
+                    <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+            </div>
         </div>
-        <div class="col-md-6">
-            <h2 class="display-5 fw-bold mb-4">About Our Farm</h2>
-            <p class="lead">
-                Welcome to <strong>Smart Greenhouse Farm</strong>, where innovation meets nature. Our farm specializes in cultivating
-                high-quality crop seedlings in a controlled greenhouse environment. We are dedicated to sustainable farming practices
-                and providing fresh seedlings to empower farmers around the globe.
-            </p>
-            <ul class="list-group list-group-flush mb-4">
-                <li class="list-group-item border-0 ps-0">
-                    <i class="bi bi-leaf me-2 text-success"></i> Eco-friendly and sustainable farming practices
-                </li>
-                <li class="list-group-item border-0 ps-0">
-                    <i class="bi bi-seedling me-2 text-success"></i> Diverse variety of crop seedlings for every season
-                </li>
-                <li class="list-group-item border-0 ps-0">
-                    <i class="bi bi-person-circle me-2 text-success"></i> Experienced agronomists to guide your farming journey
-                </li>
-                <li class="list-group-item border-0 ps-0">
-                    <i class="bi bi-globe me-2 text-success"></i> Commitment to supporting local and global agriculture
-                </li>
-                <li class="list-group-item border-0 ps-0">
-                    <i class="bi bi-cart-check me-2 text-success"></i> Online ordering system for hassle-free delivery
-                </li>
-            </ul>
-            <a href="#contact" class="button">
-                Learn More
-                <i class="bi bi-arrow-right ms-2"></i>
-            </a>
-        </div>
-    </div>
-</section>
+    </section>
 
+    <!-- Contact Section (unchanged, ensure responsiveness) -->
+    <div class="container-fluid contact py-5">
+        <div class="container py-5">
+            <div class="p-5 bg-light rounded">
+                <div class="row g-4">
+                    <div class="col-12">
+                        <div class="text-center mx-auto" style="max-width: 700px;">
+                            <h1 class="text-primary">Get in touch</h1>
 
-<!-- Contact Start -->
-<div class="container-fluid contact py-5">
-    <div class="container py-5">
-        <div class="p-5 bg-light rounded">
-            <div class="row g-4">
-                <!-- Section Header -->
-                <div class="col-12">
-                    <div class="text-center mx-auto" style="max-width: 700px;">
-                        <h1 class="text-primary">Get in touch</h1>
+                            {% if success_message %}
+                            <div class="alert alert-success">
+                                {{ success_message }}
+                            </div>
+                            {% endif %}
 
-                        {% if success_message %}
-                        <div class="alert alert-success">
-                            {{ success_message }}
-                        </div>
-                        {% endif %}
-
-                        <p class="mb-4">
-                            Reach us by call or message us at any given time
-
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Google Maps Section -->
-                <div class="col-12">
-                    <div class="h-100 rounded">
-                        <iframe
-                            class="rounded w-100"
-                            style="height: 400px;"
-                            src=""
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
-                </div>
-
-                <!-- Contact Form -->
-                <div class="col-lg-7 col-md-12">
-                    <form action="{% url 'contact' %}" method="POST" class="contact__form">
-                        {% csrf_token %}
-                        <input type="email" name="email" class="form-control border-0 py-3 mb-4" placeholder="Your Email" required>
-                        <input type="text" name="phone_number" placeholder="Your Number" class="form-control border-0 py-3 mb-4" required>
-                        <input type="text" name="subject" class="form-control border-0 py-3 mb-4" placeholder="Enter Your Subject" required>
-                        <textarea name="message" class="form-control border-0 mb-4" rows="5" placeholder="Your Message"></textarea>
-                        <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
-                    </form>
-                </div>
-
-                <!-- Contact Information -->
-                <div class="col-lg-5 col-md-12">
-                    <div class="d-flex p-4 rounded mb-4 bg-white align-items-center">
-                        <i class="fas fa-map-marker-alt fa-2x text-primary me-3"></i>
-                        <div>
-                            <h4 class="mb-1">Location</h4>
-                            <p class="mb-0">Sitian, Chepseon</p>
+                            <p class="mb-4">
+                                Reach us by call or message us at any given time
+                            </p>
                         </div>
                     </div>
-                    <div class="d-flex p-4 rounded mb-4 bg-white align-items-center">
-                        <i class="fas fa-envelope fa-2x text-primary me-3"></i>
-                        <div>
-                            <h4 class="mb-1">Mail Us</h4>
-                            <p class="mb-0">philipseedling.com</p>
+
+                    <div class="col-12">
+                        <div class="h-100 rounded">
+                            <iframe
+                                class="rounded w-100"
+                                style="height: 400px;"
+                                src=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
                         </div>
                     </div>
-                    <div class="d-flex p-4 rounded bg-white align-items-center">
-                        <i class="fa fa-phone-alt fa-2x text-primary me-3"></i>
-                        <div>
-                            <h4 class="mb-1">Number</h4>
-                            <p class="mb-0">0727662869</p>
+
+                    <div class="col-lg-7 col-md-12">
+                        <form action="{% url 'contact' %}" method="POST" class="contact__form">
+                            {% csrf_token %}
+                            <input type="email" name="email" class="form-control border-0 py-3 mb-4" placeholder="Your Email" required>
+                            <input type="text" name="phone_number" placeholder="Your Number" class="form-control border-0 py-3 mb-4" required>
+                            <input type="text" name="subject" class="form-control border-0 py-3 mb-4" placeholder="Enter Your Subject" required>
+                            <textarea name="message" class="form-control border-0 mb-4" rows="5" placeholder="Your Message"></textarea>
+                            <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
+                        </form>
+                    </div>
+
+                    <div class="col-lg-5 col-md-12">
+                        <div class="d-flex p-4 rounded mb-4 bg-white align-items-center">
+                            <i class="fas fa-map-marker-alt fa-2x text-primary me-3"></i>
+                            <div>
+                                <h4 class="mb-1">Location</h4>
+                                <p class="mb-0">Sitian, Chepseon</p>
+                            </div>
+                        </div>
+                        <div class="d-flex p-4 rounded mb-4 bg-white align-items-center">
+                            <i class="fas fa-envelope fa-2x text-primary me-3"></i>
+                            <div>
+                                <h4 class="mb-1">Mail Us</h4>
+                                <p class="mb-0">philipseedling.com</p>
+                            </div>
+                        </div>
+                        <div class="d-flex p-4 rounded bg-white align-items-center">
+                            <i class="fa fa-phone-alt fa-2x text-primary me-3"></i>
+                            <div>
+                                <h4 class="mb-1">Number</h4>
+                                <p class="mb-0">0727662869</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -117,45 +113,4 @@
         </div>
     </div>
 </div>
-<!-- Contact End -->
-
-
-  {% endblock %}
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+{% endblock %}

@@ -202,7 +202,6 @@ body.dark-theme{
 /*}*/
 
 
-
 /*=============== CONTACT ===============*/
 .contact__container{
   row-gap: 3.5rem;
@@ -254,7 +253,7 @@ body.dark-theme{
   background: none;
 
   color: var(--text-color);
-
+  font-size: 1rem;
 
   border: none;
   outline: none;
@@ -264,6 +263,7 @@ body.dark-theme{
 .contact__label{
   position: absolute;
   top: .75rem;
+  left: 1rem;
   width: 100%;
   font-size: var(--small-font-size);
   color: var(--text-color-light);
@@ -276,12 +276,13 @@ body.dark-theme{
 
 .contact__area textarea{
   resize: none;
+  height: 100%;
 }
 
 /*Input focus move up label*/
 .contact__input:focus + .contact__label{
   top: -.75rem;
-  left: 0;
+  left: 1rem;
   font-size: var(--smaller-font-size);
   z-index: 10;
 }
@@ -290,7 +291,60 @@ body.dark-theme{
 .contact__input:not(:placeholder-shown).contact__input:not(:focus) + .contact__label{
   top: -.75rem;
   font-size: var(--smaller-font-size);
+  left: 1rem;
   z-index: 10;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  /* Stack the form elements vertically for mobile */
+  .contact__data {
+    grid-template-columns: 1fr; /* Single column layout */
+  }
+
+  .contact__inputs {
+    row-gap: 1.5rem; /* Reduce row-gap for better mobile spacing */
+  }
+
+  .contact__input {
+    padding: 1rem 0; /* Adjust padding to make it more mobile-friendly */
+  }
+
+  .contact__label {
+    font-size: 0.875rem; /* Smaller font size for labels */
+  }
+
+  .contact__area {
+    height: 5rem; /* Adjust text area height for mobile screens */
+  }
+
+  /* Make button take full width */
+  .contact__form button {
+    width: 100%;
+  }
+
+  .contact__content {
+    height: 2.5rem; /* Adjust input height for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further adjustments for small screens (e.g., smaller phones) */
+  .contact__input {
+    padding: 0.75rem 0;
+  }
+
+  .contact__label {
+    font-size: 0.75rem; /* Even smaller label font size */
+  }
+
+  .contact__inputs {
+    row-gap: 1rem; /* Smaller gap for compact mobile devices */
+  }
+
+  .contact__container {
+    padding: 10px; /* Add padding for better mobile spacing */
+  }
 }
 
 
